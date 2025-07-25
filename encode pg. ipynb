@@ -1,0 +1,95 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "56efee15-61a8-46c4-8b87-8451cb4e3d4c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a character:  A\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Character entered: 'A'\n",
+      "Unicode code point (decimal): 65\n",
+      "Unicode code point (hex): 0x41\n",
+      "UTF-8 encoded bytes: b'A'\n",
+      "UTF-8 bytes in hex: 41\n"
+     ]
+    }
+   ],
+   "source": [
+    "def main():\n",
+    "    # Get user input\n",
+    "    user_input = input(\"Enter a character: \")\n",
+    "\n",
+    "    if not user_input:\n",
+    "        print(\"No input provided.\")\n",
+    "        return\n",
+    "\n",
+    "    # Take the first character only\n",
+    "    char = user_input[0]\n",
+    "\n",
+    "    # Unicode code point\n",
+    "    code_point = ord(char)\n",
+    "\n",
+    "    print(f\"Character entered: '{char}'\")\n",
+    "    print(f\"Unicode code point (decimal): {code_point}\")\n",
+    "    print(f\"Unicode code point (hex): {hex(code_point)}\")\n",
+    "\n",
+    "    # UTF-8 encoding bytes\n",
+    "    utf8_bytes = char.encode('utf-8')\n",
+    "    print(f\"UTF-8 encoded bytes: {utf8_bytes}\")\n",
+    "    print(\"UTF-8 bytes in hex:\", ' '.join(f\"{b:02x}\" for b in utf8_bytes))\n",
+    "\n",
+    "    # Optionally show other encodings:\n",
+    "    # You can uncomment these if you want to see how it encodes in other encodings.\n",
+    "    # try:\n",
+    "    #     utf16_bytes = char.encode('utf-16')\n",
+    "    #     print(f\"UTF-16 encoded bytes: {utf16_bytes}\")\n",
+    "    #     print(\"UTF-16 bytes in hex:\", ' '.join(f\"{b:02x}\" for b in utf16_bytes))\n",
+    "    # except UnicodeEncodeError:\n",
+    "    #     print(\"Cannot encode in UTF-16.\")\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    main()\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "83c0bca4-a8fe-4f41-8d00-27cc282d943a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
